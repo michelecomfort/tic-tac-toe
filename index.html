@@ -1,60 +1,33 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang='en' dir='ltr'>
   <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="styles.css">
+    <meta charset='utf-8'>
+    <link rel='stylesheet' href='styles.css'>
     <title>Tic Tac Toe</title>
   </head>
 
   <body>
     <main class='columns'>
-      <section class="left-side">
+      <section class='left-side'>
         <h1 class='player-one-heading'>Player 1 WINS</h1>
-        <h2>0</h2>
-        <img id='starIcon'src="assets/star-active.svg" alt="">
+        <div id='mapleLeaf' class='leaf maple' >🍁</div>
+        <h2 id='playerOneWins'>0</h2>
       </section>
 
       <section class='center'>
         <section class='center-top'>
-          <h1 id="playerOneTurn" class="center-player-heading">Player 1 - take your turn!</h1>
-          <h1 id="playerTwoTurn" class="center-player-heading">Player 2 - take your turn!</h1>
+          <h1 id='playerOneTurn' class='center-player-heading'>🍁 Player 1 🍁 - your turn!</h1>
+          <h1 id='playerTwoTurn' class='center-player-heading hidden'>🍃 Player 2 🍃  - your turn!</h1>
         </section>
-        <section class='game-grid'>
-          <section class='box'>
-            <div class='game-boxes'>one</div>
-          </section>
-          <section class='box'>
-            <div class='game-boxes'>two</div>
-          </section>
-          <section class='box'>
-            <div class='game-boxes'>three</div>
-          </section>
-          <section class='box'>
-            <div class='game-boxes'>four</div>
-          </section>
-          <section class='box'>
-            <div class='game-boxes'>five</div>
-          </section>
-          <section class='box'>
-            <div class='game-boxes'>six</div>
-          </section>
-          <section class='box'>
-            <div class='game-boxes'>seven</div>
-          </section>
-          <section class='box'>
-            <div class='game-boxes'>eight</div>
-          </section>
-          <section class='box'>
-            <div class='game-boxes'>nine</div>
-          </section>
+        <section id='gameGrid' class='game-grid'>
+          <!-- Dynamic game grid will appear here -->
         </section>
       </section>
 
       <section class='right-side'>
         <h1 class='player-two-heading'>Player 2 WINS</h1>
-        <h2>0</h2>
-        <img src="assets/upvote.svg" alt="">
+        <div id='greenLeaf' class="leaf green">🍃</div>
+        <h2 id='playerTwoWins'>0</h2>
       </section>
     </main>
 
