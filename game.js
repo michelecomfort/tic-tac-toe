@@ -28,7 +28,6 @@ class Game {
         this.game[2] === 'X' && this.game[5] === 'X' && this.game[8] === 'X' ||
         this.game[0] === 'X' && this.game[4] === 'X' && this.game[8] === 'X' ||
         this.game[2] === 'X' && this.game[4] === 'X' && this.game[6] === 'X') {
-        console.log('Player 1 Wins')
         return true
       }
     }
@@ -44,7 +43,6 @@ class Game {
         this.game[2] === 'O' && this.game[5] === 'O' && this.game[8] === 'O' ||
         this.game[0] === 'O' && this.game[4] === 'O' && this.game[8] === 'O' ||
         this.game[2] === 'O' && this.game[4] === 'O' && this.game[6] === 'O') {
-        console.log('Player 2 Wins')
         return true
       }
     }
