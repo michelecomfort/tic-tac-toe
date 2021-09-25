@@ -3,6 +3,12 @@ class Player {
     this.id = id
     this.token = token
     this.wins = 0
+
+  }
+
+  addToWins() {
+    this.wins++
+    return this.wins
   }
 
   saveWinsToStorage(){
@@ -12,5 +18,5 @@ class Player {
   retrieveWinsFromStorage() {
 
   }
-  
+
 }

@@ -1,4 +1,6 @@
 var game = new Game()
+var playerOne = new Player()
+var playerTwo = new Player()
 //Query Selectors
 var gameGrid = document.querySelector('.game-grid')
 var playerOneTurn = document.getElementById('playerOneTurn')
@@ -11,6 +13,9 @@ var five = document.getElementById('five')
 var six = document.getElementById('six')
 var seven = document.getElementById('seven')
 var eight = document.getElementById('eight')
+var displayWinner = document.getElementById('displayWinner')
+var playerOneWins = document.getElementById('playerOneWins')
+var playerTwoWins = document.getElementById('playerTwoWins')
 // var starIcon = document.getElementyById('starIcon')
 
 
@@ -57,16 +62,33 @@ function checkBox(e) {
 function makeAMove(i) {
 
   game.takeTurn(i)
-  game.checkForEquality()
+  checkForWinner()
   game.switchPlayer()
-  
+  rotatePlayerTurnText()
+
   console.log(game)
 }
 
 
+function rotatePlayerTurnText() {
+  toggle(playerOneTurn)
+  toggle(playerTwoTurn)
+}
 
+function toggle(element) {
+  element.classList.toggle('hidden')
+}
 
-
+function checkForWinner() {
+  if (game.checkForXWin()){
+    displayWinner.innerHTML = 'Player One WINS!!!!'
+    playerOneWins.innerHTML = playerOne.addToWins()
+  }
+  if (game.checkForOWin()) {
+    displayWinner.innerHTML = 'Player Two WINS!!!!'
+    playerTwoWins.innerHTML = playerTwo.addToWins()
+  }
+}
 //
 // function changeInnerText(event) {
 //   var playerToken;
@@ -75,10 +97,7 @@ function makeAMove(i) {
 //   toggle()
 // }
 
-function toggle() {
-  playerOneTurn.classList.add('hidden')
-  playerTwoTurn.classList.remove('hidden')
-}
+
 
 function changePlayerTurn() {
   toggle()

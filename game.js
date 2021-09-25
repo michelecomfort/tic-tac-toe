@@ -18,7 +18,7 @@ class Game {
     }
   }
 
-  checkForEquality() {
+  checkForXWin() {
     for (var i = 0; i < this.game.length; i++) {
       if (this.game[0] === 'X' && this.game[1] === 'X' && this.game[2] === 'X' ||
         this.game[3] === 'X' && this.game[4] === 'X' && this.game[5] === 'X' ||
@@ -29,7 +29,14 @@ class Game {
         this.game[0] === 'X' && this.game[4] === 'X' && this.game[8] === 'X' ||
         this.game[2] === 'X' && this.game[4] === 'X' && this.game[6] === 'X') {
         console.log('Player 1 Wins')
-      } else if (this.game[0] === 'O' && this.game[1] === '0' && this.game[2] === 'O' ||
+        return true
+      }
+    }
+  }
+
+  checkForOWin() {
+    for (var i = 0; i < this.game.length; i++) {
+      if (this.game[0] === 'O' && this.game[1] === '0' && this.game[2] === 'O' ||
         this.game[3] === 'O' && this.game[4] === 'O' && this.game[5] === 'O' ||
         this.game[6] === 'O' && this.game[7] === 'O' && this.game[8] === 'O' ||
         this.game[0] === 'O' && this.game[3] === 'O' && this.game[6] === 'O' ||
@@ -38,6 +45,7 @@ class Game {
         this.game[0] === 'O' && this.game[4] === 'O' && this.game[8] === 'O' ||
         this.game[2] === 'O' && this.game[4] === 'O' && this.game[6] === 'O') {
         console.log('Player 2 Wins')
+        return true
       }
     }
   }
