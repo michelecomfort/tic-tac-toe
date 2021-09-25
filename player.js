@@ -10,26 +10,30 @@ class Player {
     return this.wins
   }
 
-  saveWinsToStorage(player){
-    if (player.id === 'one'){
-      var stringifyWins = JSON.stringify(player)
+  saveWinsToStorage(){
+    if (this.id === 'one'){
+      var stringifyWins = JSON.stringify(this)
       localStorage.setItem("playerOneWins", stringifyWins)
-  } else if (player.id === 'two') {
-    var stringifyWins = JSON.stringify(player)
+  } else if (this.id === 'two') {
+    var stringifyWins = JSON.stringify(this)
     localStorage.setItem("playerTwoWins", stringifyWins)
   }
 }
-  retrieveWinsFromStorage(player) {
-    if (player.id === 'one'){
+  retrieveWinsFromStorage() {
+    if (this.id === 'one'){
       var retrievedWins = localStorage.getItem("playerOneWins")
       var storedOneWins = JSON.parse(retrievedWins)
-      this.wins = storedOneWins.wins
-      return storedOneWins
-    } else if (player.id === 'two'){
+      if (storedOneWins) {
+        this.wins = storedOneWins.wins
+        return this.wins
+      }
+    } else if (this.id === 'two'){
     var retrievedWins = localStorage.getItem("playerTwoWins")
     var storedTwoWins = JSON.parse(retrievedWins)
-    this.wins = storedTwoWins.wins
+    if (storedTwoWins){
+      this.wins = storedTwoWins.wins
+      return this.wins
+    }
   }
-
 }
 }

@@ -47,27 +47,5 @@ class Game {
       }
     }
   }
-
-  // checkForWin(currentCombo) {
-  //   var winningCombos = [
-  //     [0, 1, 2],
-  //     [3, 4, 5],
-  //     [6, 7, 8],
-  //     [0, 3, 6],
-  //     [1, 4, 7],
-  //     [2, 5, 8],
-  //     [0, 4, 8],
-  //     [2, 4, 6]
-  //   ]
-  //   for (var i = 0; i < winningCombos.length; i++) {
-  //     for (var k = 0; k < winningCombos[i].length; k++) {
-  //       // console.log(winningCombos[i][k])
-  //       // console.log("test",winningCombos[i][k])
-  //       if (winningCombos[i][k] === this.game[winningCombos[i][k]]) {
-  //         // console.log(this.game[winningCombos[i][k]])
-  //         // console.log('win')
-  //       }
-  //     }
-  //   }
-  // }
+Ba
 }
