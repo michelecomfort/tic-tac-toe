@@ -2,37 +2,34 @@
 <html lang='en' dir='ltr'>
   <head>
     <meta charset='utf-8'>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='styles.css'>
     <title>Tic Tac Toe</title>
   </head>
-
   <body>
     <main class='columns'>
       <section class='left-side'>
         <h1 class='player-one-heading'>Player 1 WINS</h1>
-        <div id='mapleLeaf' class='leaf maple' >🍁</div>
+        <div id='mapleLeaf' class='leaf maple'>🍁</div>
         <h2 id='playerOneWins'>0</h2>
       </section>
-
-      <section  class='center'>
+      <section class='center'>
         <section id='displayWinner' class='center-top'>
           <h1 id='playerOneTurn' class='center-player-heading'>🍁 Player 1 🍁 - your turn!</h1>
-          <h1 id='playerTwoTurn' class='center-player-heading hidden'>🍃 Player 2 🍃  - your turn!</h1>
+          <h1 id='playerTwoTurn' class='center-player-heading hidden'>🍃 Player 2 🍃 - your turn!</h1>
         </section>
         <section id='gameGrid' class='game-grid'>
           <!-- Dynamic game grid will appear here -->
         </section>
       </section>
-
       <section class='right-side'>
         <h1 class='player-two-heading'>Player 2 WINS</h1>
         <div id='greenLeaf' class="leaf green">🍃</div>
         <h2 id='playerTwoWins'>0</h2>
       </section>
     </main>
-
-    <script type="text/javascript" src="player.js"></script>
-    <script type="text/javascript" src="game.js"></script>
-    <script type="text/javascript" src="main.js"></script>
+    <script type='text/javascript' src='player.js'></script>
+    <script type='text/javascript' src='game.js'></script>
+    <script type='text/javascript' src='main.js'></script>
   </body>
 </html>

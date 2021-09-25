@@ -5,6 +5,7 @@ img {
 
 body {
   display: flex;
+  font-family: 'Montserrat';
 }
 
 main {
@@ -12,11 +13,11 @@ main {
 }
 
 h1 {
-
+  font-weight: 400;
 }
 
 h2 {
-  /* padding-left: 48%; */
+
 }
 
 .columns {
