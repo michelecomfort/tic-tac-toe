@@ -48,7 +48,6 @@ h2 {
   display: flex;
   flex-direction: column;
   width: 50%;
-
 }
 
 .left-side,
@@ -64,7 +63,7 @@ h2 {
 
 .player-one-heading,
 .player-two-heading{
-
+  margin-top: 40%;
 }
 
 .game-grid {
@@ -74,18 +73,16 @@ h2 {
 }
 
 .game-boxes {
-
-border: 2px solid;
-border-radius: 2px;
-display: flex;
-flex-direction: column;
-flex-wrap: wrap;
-font-size: 600%;
-height: 25vh;
-width: 100%;
-align-content: center;
-justify-content: center;
-
+  border: 2px solid;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-size: 600%;
+  height: 25vh;
+  width: 100%;
+  align-content: center;
+  justify-content: center;
 }
 
 .zero,
