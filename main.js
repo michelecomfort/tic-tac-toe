@@ -23,9 +23,7 @@ var playerTwoTurn = document.getElementById('playerTwoTurn')
 window.addEventListener('load', onPageLoad)
 gameGrid.addEventListener('click', checkBox)
 
-//functions
 function onPageLoad() {
-
   showSavedWins()
 }
 
@@ -64,16 +62,17 @@ function checkForWinner() {
   if (game.checkForXWin()) {
     displayWinner.innerHTML = 'Player One WINS!!!!'
     playerOneWins.innerHTML = playerOne.addToWins()
-    playerOne.saveWinsToStorage(playerOne)
+    playerOne.saveWinsToStorage()
     resetBoard()
   }
   if (game.checkForOWin()) {
     displayWinner.innerHTML = 'Player Two WINS!!!!'
     playerTwoWins.innerHTML = playerTwo.addToWins()
-    playerOne.saveWinsToStorage(playerTwo)
+    playerTwo.saveWinsToStorage()
     resetBoard()
   }
 }
+
 function rotatePlayerTurnText() {
   toggle(playerOneTurn)
   toggle(playerTwoTurn)
