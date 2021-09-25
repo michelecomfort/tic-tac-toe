@@ -5,6 +5,7 @@ img {
 
 body {
   display: flex;
+  font-family: 'Montserrat';
 }
 
 main {
@@ -12,7 +13,7 @@ main {
 }
 
 h1 {
-
+  font-weight: 400;
 }
 
 h2 {

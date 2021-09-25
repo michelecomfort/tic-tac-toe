@@ -1,9 +1,9 @@
 var game = new Game()
 var playerOne = new Player()
 var playerTwo = new Player()
+
 //Query Selectors
 var gameGrid = document.querySelector('.game-grid')
-var playerOneTurn = document.getElementById('playerOneTurn')
 var zero = document.getElementById('zero')
 var one = document.getElementById('one')
 var two = document.getElementById('two')
@@ -16,7 +16,6 @@ var eight = document.getElementById('eight')
 var displayWinner = document.getElementById('displayWinner')
 var playerOneWins = document.getElementById('playerOneWins')
 var playerTwoWins = document.getElementById('playerTwoWins')
-// var starIcon = document.getElementyById('starIcon')
 
 
 
@@ -30,8 +29,6 @@ function onPageLoad() {
 }
 
 function renderGame() {
-  var playerToken;
-
   gameGrid.innerHTML = ''
   gameGrid.innerHTML += `
     <div class='game-boxes zero' id=0>0</div>
@@ -50,9 +47,9 @@ function checkBox(e) {
   var i = e.target.id
   if (game.game[i] === '') {
     if (game.turn === 'X') {
-      e.target.innerHTML = 'X'
+      e.target.innerHTML = '🍁'
     } else if (game.turn === 'O') {
-      e.target.innerHTML = 'O'
+      e.target.innerHTML = '🍃'
     }
     makeAMove(e.target.id)
   }
@@ -64,6 +61,7 @@ function makeAMove(i) {
   game.takeTurn(i)
   checkForWinner()
   game.switchPlayer()
+
   rotatePlayerTurnText()
 
   console.log(game)
@@ -83,10 +81,12 @@ function checkForWinner() {
   if (game.checkForXWin()){
     displayWinner.innerHTML = 'Player One WINS!!!!'
     playerOneWins.innerHTML = playerOne.addToWins()
+    playerOne.saveWinsToStorage(playerOne)
   }
   if (game.checkForOWin()) {
     displayWinner.innerHTML = 'Player Two WINS!!!!'
     playerTwoWins.innerHTML = playerTwo.addToWins()
+    playerOne.saveWinsToStorage(playerTwo)
   }
 }
 //
@@ -96,13 +96,3 @@ function checkForWinner() {
 //   changeCardText.innerHTML = 'X'
 //   toggle()
 // }
-
-
-
-function changePlayerTurn() {
-  toggle()
-}
-
-//if player inner text says player one,
-//click will be a star on click
-//else, icon w be a vote on click
