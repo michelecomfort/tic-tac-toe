@@ -28,6 +28,8 @@ class Player {
         return this.wins
       }
     } else if (this.id === 'two'){
+      this.wins = storedOneWins.wins
+    } else if (player.id === 'two'){
     var retrievedWins = localStorage.getItem("playerTwoWins")
     var storedTwoWins = JSON.parse(retrievedWins)
     if (storedTwoWins){
