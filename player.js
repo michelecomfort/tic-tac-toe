@@ -3,7 +3,6 @@ class Player {
     this.id = id
     this.token = token
     this.wins = 0
-
   }
 
   addToWins() {

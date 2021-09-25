@@ -70,8 +70,6 @@ class Game {
   //         // console.log('win')
   //       }
   //     }
-  //     //is 0 equal to 1 & 2
-  //     //checking array equality LOOK UP
   //   }
   // }
 }

@@ -89,10 +89,3 @@ function checkForWinner() {
     playerOne.saveWinsToStorage(playerTwo)
   }
 }
-//
-// function changeInnerText(event) {
-//   var playerToken;
-//   var changeCardText = event.target.closest('.box')
-//   changeCardText.innerHTML = 'X'
-//   toggle()
-// }
