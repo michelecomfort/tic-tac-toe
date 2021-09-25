@@ -34,7 +34,8 @@ h2 {
 
 }
 
-.center-player-heading {
+.center-player-heading,
+.center-top {
   font-size: 50px;
   margin: auto;
 }
@@ -78,6 +79,7 @@ border-radius: 2px;
 display: flex;
 flex-direction: column;
 flex-wrap: wrap;
+font-size: 600%;
 height: 25vh;
 width: 100%;
 align-content: center;
