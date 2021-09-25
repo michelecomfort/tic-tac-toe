@@ -24,7 +24,6 @@ class Player {
       var retrievedWins = localStorage.getItem("playerOneWins")
       var storedOneWins = JSON.parse(retrievedWins)
       this.wins = storedOneWins.wins
-      return storedOneWins
     } else if (player.id === 'two'){
     var retrievedWins = localStorage.getItem("playerTwoWins")
     var storedTwoWins = JSON.parse(retrievedWins)

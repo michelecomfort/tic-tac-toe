@@ -100,7 +100,7 @@ function showSavedWins() {
   var retrievedWins = localStorage.getItem("playerOneWins")
   var storedOneWins = JSON.parse(retrievedWins)
   // playerOne.retrieveWinsFromStorage(playerOne)
-    if (storedOneWins.wins) {
+    if (storedOneWins) {
       playerOne.wins = storedOneWins.wins
       playerOneWins.innerHTML = storedOneWins.wins
   }
