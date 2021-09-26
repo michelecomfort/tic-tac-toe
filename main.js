@@ -53,6 +53,7 @@ function checkBox(e) {
 
 function makeAMove(i) {
   game.takeTurn(i)
+  checkForDraw()
   checkForWinner()
   game.switchPlayer()
   rotatePlayerTurnText()
@@ -60,17 +61,26 @@ function makeAMove(i) {
 
 function checkForWinner() {
   if (game.checkForXWin()) {
-    displayWinner.innerHTML = 'Player One WINS!!!!'
+    displayWinner.innerHTML = 'Player 1 WINS!!!!'
     playerOneWins.innerHTML = playerOne.addToWins()
     playerOne.saveWinsToStorage()
     resetBoard()
+    return true
   }
   if (game.checkForOWin()) {
-    displayWinner.innerHTML = 'Player Two WINS!!!!'
+    displayWinner.innerHTML = 'Player 2 WINS!!!!'
     playerTwoWins.innerHTML = playerTwo.addToWins()
     playerTwo.saveWinsToStorage()
     resetBoard()
+    return true
   }
+}
+
+function checkForDraw() {
+    if (!game.game.includes('')){
+      displayWinner.innerHTML = 'Draw!'
+      resetBoard()
+    }
 }
 
 function rotatePlayerTurnText() {
