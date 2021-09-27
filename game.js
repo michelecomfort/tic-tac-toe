@@ -1,7 +1,9 @@
 class Game {
   constructor() {
     this.turn = 'X' || 'O'
-    this.game = new Array(9).fill('')
+    this.game = new Array(9).fill(0)
+    this.playerOne = new Player('one', 'maple-leaf', 0)
+    this.playerTwo = new Player('two', 'green-leaf', 0)
   }
 
   takeTurn(i) {
@@ -11,10 +13,10 @@ class Game {
   switchPlayer() {
     if (this.turn === 'X') {
       this.turn = 'O'
-      return 'O'
+      // return 'O'
     } else {
       this.turn = 'X'
-      return 'X'
+      // return 'X'
     }
   }
 
@@ -47,5 +49,5 @@ class Game {
       }
     }
   }
-Ba
+
 }

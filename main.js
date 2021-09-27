@@ -1,23 +1,15 @@
 var game = new Game()
-var playerOne = new Player('one', 'maple-leaf', 0)
-var playerTwo = new Player('two', 'green-leaf', 0)
 
 //Query Selectors
 var gameGrid = document.querySelector('.game-grid')
-var zero = document.getElementById('zero')
-var one = document.getElementById('one')
-var two = document.getElementById('two')
-var three = document.getElementById('three')
-var four = document.getElementById('four')
-var five = document.getElementById('five')
-var six = document.getElementById('six')
-var seven = document.getElementById('seven')
-var eight = document.getElementById('eight')
 var displayWinner = document.getElementById('displayWinner')
-var playerOneWins = document.getElementById('playerOneWins')
-var playerTwoWins = document.getElementById('playerTwoWins')
+var playerOneWinCount = document.getElementById('playerOneWinCount')
+var playerTwoWinCount = document.getElementById('playerTwoWinCount')
 var playerOneTurn = document.getElementById('playerOneTurn')
 var playerTwoTurn = document.getElementById('playerTwoTurn')
+var draw = document.getElementById('draw')
+var playerOneWins = document.getElementById('player1Wins')
+var playerTwoWins = document.getElementById('player2Wins')
 
 //Event Listeners
 window.addEventListener('load', onPageLoad)
@@ -43,42 +35,54 @@ function renderGame() {
 
 function checkBox(e) {
   var i = e.target.id
-  if (game.game[i] === '' && game.turn === 'X') {
+  if (!game.game[i] && game.turn === 'X') {
       e.target.innerHTML = '🍁'
-    } else if (game.game[i] === '' && game.turn === 'O') {
+      e.preventDefault
+      e.target.disabled = true
+    } else if (!game.game[i] && game.turn === 'O') {
       e.target.innerHTML = '🍃'
+      e.preventDefault
+      e.target.disabled = true
     }
     makeAMove(e.target.id)
   }
 
 function makeAMove(i) {
   game.takeTurn(i)
-  checkForDraw()
-  checkForWinner()
-  game.switchPlayer()
-  rotatePlayerTurnText()
+  // i.preventDefault()
+    checkForDraw()
+    checkForWinner()
+    game.switchPlayer()
+    rotatePlayerTurnText()
 }
 
 function checkForWinner() {
   if (game.checkForXWin()) {
-    displayWinner.innerHTML = 'Player 1 WINS!!!!'
-    playerOneWins.innerHTML = playerOne.addToWins()
-    playerOne.saveWinsToStorage()
+    // displayWinner.innerHTML = 'Player 1 WINS!!!!'
+    showWinner()
+    show(player1Wins)
+    playerOneWinCount.innerHTML = game.playerOne.addToWins()
+    game.playerOne.saveWinsToStorage()
     resetBoard()
     return true
   }
   if (game.checkForOWin()) {
-    displayWinner.innerHTML = 'Player 2 WINS!!!!'
-    playerTwoWins.innerHTML = playerTwo.addToWins()
-    playerTwo.saveWinsToStorage()
+    showWinner()
+    show(player2Wins)
+    // displayWinner.innerHTML = 'Player 2 WINS!!!!'
+    playerTwoWinCount.innerHTML = game.playerTwo.addToWins()
+    game.playerTwo.saveWinsToStorage()
     resetBoard()
     return true
   }
 }
 
 function checkForDraw() {
-    if (!game.game.includes('')){
-      displayWinner.innerHTML = 'Draw!'
+    if (!game.game.includes(0)){
+      // displayWinner.innerHTML = 'DRAW!'
+      show(draw)
+      hide(playerOneTurn)
+      hide(playerTwoTurn)
       resetBoard()
     }
 }
@@ -88,8 +92,23 @@ function rotatePlayerTurnText() {
   toggle(playerTwoTurn)
 }
 
+function show(element) {
+  element.classList.remove('hidden')
+}
+
+function hide(element) {
+  element.classList.add('hidden')
+}
+
+
 function toggle(element) {
   element.classList.toggle('hidden')
+}
+
+function showWinner(){
+  hide(playerOneTurn)
+  hide(playerTwoTurn)
+  hide(draw)
 }
 
 function resetBoard() {
@@ -97,11 +116,13 @@ function resetBoard() {
 }
 
 function resetPage() {
-  window.location.reload()
+  game = new Game()
+
+  renderGame()
 }
 
 function showSavedWins() {
-  playerOneWins.innerHTML = playerOne.retrieveWinsFromStorage() || 0
-  playerTwoWins.innerHTML = playerTwo.retrieveWinsFromStorage() || 0
+  playerOneWinCount.innerHTML = game.playerOne.retrieveWinsFromStorage() || 0
+  playerTwoWinCount.innerHTML = game.playerTwo.retrieveWinsFromStorage() || 0
   renderGame()
 }
