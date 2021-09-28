@@ -37,7 +37,7 @@ class Game {
 
   checkForOWin() {
     for (var i = 0; i < this.game.length; i++) {
-      if (this.game[0] === 'O' && this.game[1] === '0' && this.game[2] === 'O' ||
+      if (this.game[0] === 'O' && this.game[1] === 'O' && this.game[2] === 'O' ||
         this.game[3] === 'O' && this.game[4] === 'O' && this.game[5] === 'O' ||
         this.game[6] === 'O' && this.game[7] === 'O' && this.game[8] === 'O' ||
         this.game[0] === 'O' && this.game[3] === 'O' && this.game[6] === 'O' ||

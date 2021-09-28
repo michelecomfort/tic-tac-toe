@@ -2,53 +2,47 @@
   margin: 0;
 }
 
-html {
-  height: 100vh;
-  width: 100vw;
-}
-
 body {
   background-image: url('assets/image-overlay.jpg');
   background-size: cover;
+  color: #000080;
   display: flex;
-  color: #191970;
   font-family: 'Montserrat';
 }
 
-h1 {
-  font-size: 70px;
+h1,
+h2,
+.take-your-turn,
+.player-one-heading,
+.player-two-heading {
+  font-size: 5vw;
   font-weight: 500;
 }
 
-h2 {
-  font-size: 50px;
-  font-weight: 500;
+h2,
+.player-one-heading,
+.player-two-heading {
+  font-weight: 400;
+  /* text-shadow: 2px 1px 2px #FFA07A; */
 }
+
+.left-side {
+  text-shadow: 2px 1px 2px #F08080;
+}
+
+.right-side {
+  text-shadow: 2px 1px 2px #228B22;
+}
+
 .columns {
   display: flex;
   width: 100vw;
 }
 
-.center-top {
-  align-items: center;
-  /* background-color: #FFFAF0; */
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  /* width: 80%; */
-
-}
-
 .center-player-heading,
 .center-top {
-  display: flex;
   margin: auto;
-}
-
-.take-your-turn {
-  font-size: 50px;
-  font-weight: 500;
+  text-shadow: 3px 2px 2px #FFA07A;
 }
 
 .left-side,
@@ -57,6 +51,7 @@ h2 {
   display: flex;
   flex-direction: column;
   width: 40%;
+  justify-content: center;
 }
 
 .left-side,
@@ -67,15 +62,7 @@ h2 {
 }
 
 .leaf {
- font-size: 700%;
-}
-
-.player-one-heading,
-.player-two-heading{
-  color: #191970;
-  font-size: 70px;
-  font-weight: 500;
-  margin-top: 60%;
+ font-size: 10vw;
 }
 
 .game-grid {
@@ -87,12 +74,10 @@ h2 {
   align-content: center;
   cursor: pointer;
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
-  font-size: 600%;
+  font-size: 8vw;
   height: 22vh;
   justify-content: center;
-  width: 98%;
 }
 
 .four {
@@ -111,28 +96,20 @@ h2 {
   border-top: 6px solid #191970;
 }
 
-.zero,
-.one,
-.two {
-  margin-top: 4%;
+.seven {
+  margin-bottom: 1vh;
 }
 
-.zero,
-.three,
-.six {
-  margin-left: 4%;
+.one {
+  margin-top: 1vh;
 }
 
-.two,
-.five,
-.eight {
-  margin-right: 4%;
+.three{
+  margin-left: 1vh;
 }
 
-.six,
-.seven,
-.eight {
-  margin-bottom: 4%;
+.five {
+  margin-right: 1vh;
 }
 
 .hidden {
