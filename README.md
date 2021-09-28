@@ -32,11 +32,11 @@ This project was designed the show our understanding around the follow:
 
 - Take turns clicking on a square in attempts to create a sequence of 3-in-a-row
 
-![tictactoe1]()
+
 
 - Click the Reset Game button in order to start the game over with 0 wins
 
-![tictactoe2]()
+
 
 # Author
 Michele Comfort GitHub: <a href="https://github.com/michelecomfort">@michelecomfort</a>
