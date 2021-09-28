@@ -62,16 +62,15 @@ function makeAMove(i) {
 
 function checkForWinner() {
   if (game.checkForXWin()) {
-    showWinner()
+    hideHeadings()
     show(player1Wins)
     playerOneWinCount.innerHTML = game.playerOne.addToWins()
-    console.log(playerOneWinCount)
     game.playerOne.saveWinsToStorage()
     resetBoard()
     return true
   }
   if (game.checkForOWin()) {
-    showWinner()
+    hideHeadings()
     show(player2Wins)
     playerTwoWinCount.innerHTML = game.playerTwo.addToWins()
     game.playerTwo.saveWinsToStorage()
@@ -94,6 +93,10 @@ function rotatePlayerTurnText() {
   toggle(playerTwoTurn)
 }
 
+function toggle(element) {
+  element.classList.toggle('hidden')
+}
+
 function show(element) {
   element.classList.remove('hidden')
 }
@@ -102,20 +105,19 @@ function hide(element) {
   element.classList.add('hidden')
 }
 
-
-function toggle(element) {
-  element.classList.toggle('hidden')
-}
-
-function showWinner() {
+function hideHeadings() {
   hide(playerOneTurn)
   hide(playerTwoTurn)
   hide(draw)
 }
 
-// function renderHeading() {
-//
-// }
+function renderHeading() {
+  hide(playerTwoTurn)
+  hide(draw)
+  hide(player2Wins)
+  hide(player1Wins)
+  show(playerOneTurn)
+}
 
 function resetBoard() {
   setTimeout(resetPage, 2000)
@@ -123,11 +125,7 @@ function resetBoard() {
 
 function resetPage() {
   game = new Game()
-  hide(playerTwoTurn)
-  hide(draw)
-  hide(player2Wins)
-  hide(player1Wins)
-  show(playerOneTurn)
+  renderHeading()
   showSavedWins()
   renderGame()
 }
