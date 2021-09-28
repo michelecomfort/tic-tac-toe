@@ -2,14 +2,14 @@ var game = new Game()
 
 //Query Selectors
 var gameGrid = document.querySelector('.game-grid')
-var displayWinner = document.getElementById('displayWinner')
-var playerOneWinCount = document.getElementById('playerOneWinCount')
-var playerTwoWinCount = document.getElementById('playerTwoWinCount')
 var playerOneTurn = document.getElementById('playerOneTurn')
 var playerTwoTurn = document.getElementById('playerTwoTurn')
-var draw = document.getElementById('draw')
+var displayWinner = document.getElementById('displayWinner')
 var playerOneWins = document.getElementById('player1Wins')
 var playerTwoWins = document.getElementById('player2Wins')
+var draw = document.getElementById('draw')
+var playerOneWinCount = document.getElementById('playerOneWinCount')
+var playerTwoWinCount = document.getElementById('playerTwoWinCount')
 var gameResetButton = document.getElementById('gameReset')
 
 //Event Listeners

@@ -11,9 +11,7 @@ body {
 }
 
 h1,
-.take-your-turn,
-.player-one-heading,
-.player-two-heading {
+.take-your-turn {
   font-size: 5vw;
   font-weight: 500;
 }
@@ -49,8 +47,8 @@ h2,
 .center {
   display: flex;
   flex-direction: column;
-  width: 40%;
   justify-content: center;
+  width: 40vw;
 }
 
 .left-side,
@@ -120,12 +118,19 @@ h2,
 }
 
 button {
-  background-color: #FF6347;
+  background-color: #F08080;
   border: none;
   border-radius: 50px;
+  color: #000080;
+  cursor: pointer;
+  font-family: inherit;
   margin-top: 20vh;
   padding: 2%;
-  cursor: pointer;
+}
+
+button:hover {
+  background-color: #FF6347;
+  color: white;
 }
 
 .hidden {

@@ -13,10 +13,8 @@ class Game {
   switchPlayer() {
     if (this.turn === 'X') {
       this.turn = 'O'
-      // return 'O'
     } else {
       this.turn = 'X'
-      // return 'X'
     }
   }
 
