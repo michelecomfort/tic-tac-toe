@@ -4,8 +4,9 @@ Design and create an online game of tic-tac-toe.
 
 ## Installation Instructions
 
-Github deploy <a href = 'https://michelecomfort.github.io/tic-tac-toe/'>link here.</a>
-Github repository <a href='https://github.com/michelecomfort/tic-tac-toe'>link here.</a>
+Github Deploy <a href = 'https://michelecomfort.github.io/tic-tac-toe/'>link here.</a>
+
+Github Repository <a href='https://github.com/michelecomfort/tic-tac-toe'>link here.</a>
 
 - Fork this project to your own Github account.
 - Clone the repository to your local machine.
