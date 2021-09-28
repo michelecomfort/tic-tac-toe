@@ -144,7 +144,6 @@ function resetPage() {
 function resetGame() {
   localStorage.clear()
   resetPage()
-
 }
 
 function showSavedWins() {
