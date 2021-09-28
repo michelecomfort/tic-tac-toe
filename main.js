@@ -36,14 +36,19 @@ function renderGame() {
 function checkBox(e) {
   var i = e.target.id
   if (!game.checkForXWin() && !game.checkForOWin()) {
-    if (!game.game[i] && game.turn === 'X') {
-      e.target.innerHTML = '🍁'
-    } else if (!game.game[i] && game.turn === 'O') {
-      e.target.innerHTML = '🍃'
-    }
-    makeAMove(e.target.id)
-    disableClick(e)
+    changeLeaf(e)
   }
+}
+
+function changeLeaf(e){
+  var i = e.target.id
+  if (!game.game[i] && game.turn === 'X') {
+    e.target.innerHTML = '🍁'
+  } else if (!game.game[i] && game.turn === 'O') {
+    e.target.innerHTML = '🍃'
+  }
+  makeAMove(e.target.id)
+  disableClick(e)
 }
 
 function disableClick(e) {
@@ -53,14 +58,14 @@ function disableClick(e) {
 
 function makeAMove(i) {
   game.takeTurn(i)
-  if (!checkForWinner()) {
+  if (!determineXWin() && !determineOWin()) {
     game.switchPlayer()
     rotatePlayerTurnText()
     checkForDraw()
   }
 }
 
-function checkForWinner() {
+function determineXWin() {
   if (game.checkForXWin()) {
     hideHeadings()
     show(player1Wins)
@@ -69,6 +74,9 @@ function checkForWinner() {
     resetBoard()
     return true
   }
+}
+
+function determineOWin(){
   if (game.checkForOWin()) {
     hideHeadings()
     show(player2Wins)
@@ -77,6 +85,7 @@ function checkForWinner() {
     resetBoard()
     return true
   }
+
 }
 
 function checkForDraw() {

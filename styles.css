@@ -11,7 +11,6 @@ body {
 }
 
 h1,
-h2,
 .take-your-turn,
 .player-one-heading,
 .player-two-heading {
@@ -22,8 +21,8 @@ h2,
 h2,
 .player-one-heading,
 .player-two-heading {
+  font-size: 4vw;
   font-weight: 400;
-  /* text-shadow: 2px 1px 2px #FFA07A; */
 }
 
 .left-side {
