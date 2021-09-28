@@ -35,27 +35,29 @@ function renderGame() {
 
 function checkBox(e) {
   var i = e.target.id
-  if (!game.game[i] && game.turn === 'X') {
+  if (!game.checkForXWin() && !game.checkForOWin()) {
+    if (!game.game[i] && game.turn === 'X') {
       e.target.innerHTML = '🍁'
     } else if (!game.game[i] && game.turn === 'O') {
-      e.target.innerHTML = '🍃'  
+      e.target.innerHTML = '🍃'
     }
     makeAMove(e.target.id)
     disableClick(e)
   }
+}
 
-  function disableClick(e){
-    e.target.classList.add('disable-click')
-    e.target.classList.remove('enable-click')
-  }
+function disableClick(e) {
+  e.target.classList.add('disable-click')
+  e.target.classList.remove('enable-click')
+}
 
 function makeAMove(i) {
   game.takeTurn(i)
-    if (!checkForWinner()) {
-      game.switchPlayer()
-      rotatePlayerTurnText()
-      checkForDraw()
-    }
+  if (!checkForWinner()) {
+    game.switchPlayer()
+    rotatePlayerTurnText()
+    checkForDraw()
+  }
 }
 
 function checkForWinner() {
@@ -79,12 +81,12 @@ function checkForWinner() {
 }
 
 function checkForDraw() {
-    if (!game.game.includes(0)){
-      show(draw)
-      hide(playerOneTurn)
-      hide(playerTwoTurn)
-      resetBoard()
-    }
+  if (!game.game.includes(0)) {
+    show(draw)
+    hide(playerOneTurn)
+    hide(playerTwoTurn)
+    resetBoard()
+  }
 }
 
 function rotatePlayerTurnText() {
@@ -105,7 +107,7 @@ function toggle(element) {
   element.classList.toggle('hidden')
 }
 
-function showWinner(){
+function showWinner() {
   hide(playerOneTurn)
   hide(playerTwoTurn)
   hide(draw)
