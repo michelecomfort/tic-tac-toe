@@ -10,10 +10,12 @@ var playerTwoTurn = document.getElementById('playerTwoTurn')
 var draw = document.getElementById('draw')
 var playerOneWins = document.getElementById('player1Wins')
 var playerTwoWins = document.getElementById('player2Wins')
+var gameResetButton = document.getElementById('gameReset')
 
 //Event Listeners
 window.addEventListener('load', onPageLoad)
 gameGrid.addEventListener('click', checkBox)
+gameResetButton.addEventListener('click', resetGame)
 
 function onPageLoad() {
   showSavedWins()
@@ -137,6 +139,12 @@ function resetPage() {
   renderHeading()
   showSavedWins()
   renderGame()
+}
+
+function resetGame() {
+  localStorage.clear()
+  resetPage()
+
 }
 
 function showSavedWins() {
