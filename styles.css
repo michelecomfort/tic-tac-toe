@@ -16,7 +16,7 @@ body {
 }
 
 h1 {
-  font-size: 80px;
+  font-size: 70px;
   font-weight: 500;
 }
 
@@ -36,15 +36,13 @@ h2 {
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 80%;
-  opacity: 5;
+  /* width: 80%; */
+
 }
 
 .center-player-heading,
 .center-top {
   display: flex;
-  /* font-size: 80px;
-  font-weight: 500; */
   margin: auto;
 }
 
@@ -58,14 +56,14 @@ h2 {
 .center {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 40%;
 }
 
 .left-side,
 .right-side {
   align-items: center;
   height: 100vh;
-  width: 25vw;
+  width: 35vw;
 }
 
 .leaf {
@@ -77,7 +75,7 @@ h2 {
   color: #191970;
   font-size: 70px;
   font-weight: 500;
-  margin-top: 50%;
+  margin-top: 60%;
 }
 
 .game-grid {
@@ -139,4 +137,12 @@ h2 {
 
 .hidden {
   display: none;
+}
+
+.disable-click {
+  pointer-events: none;
+}
+
+.enable-click {
+  pointer-events: all;
 }

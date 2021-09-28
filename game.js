@@ -2,8 +2,8 @@ class Game {
   constructor() {
     this.turn = 'X' || 'O'
     this.game = new Array(9).fill(0)
-    this.playerOne = new Player('one', 'maple-leaf', 0)
-    this.playerTwo = new Player('two', 'green-leaf', 0)
+    this.playerOne = new Player('one', 'maple-leaf')
+    this.playerTwo = new Player('two', 'green-leaf')
   }
 
   takeTurn(i) {
